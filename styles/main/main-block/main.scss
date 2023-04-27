@@ -1,0 +1,281 @@
+.main {
+    position: relative;
+    height: calc(100vh - 88px);
+    background: rgb(165 164 162 / 48%);
+    overflow: hidden;
+
+    @media (min-width: 768px) {
+        height: calc(100vh - 65px);
+    }
+
+    @media (min-width: 768px) {
+        height: calc(100vh - 60px);
+    }
+
+    &__block {
+        position: relative;
+        width: 375px;
+        margin: 0 auto;
+        padding-top: 20px;
+        z-index: 1;
+
+        @media (min-width: 768px) {
+            width: 650px;
+            padding-top: 15px;
+        }
+
+        @media (min-width: 1200px) {
+            width: 740px;
+            padding-top: 10px;
+        }
+    }
+
+    &__block.hide {
+        opacity: 0.5;
+    }
+
+    &__title {
+        width: 290px;
+        margin: 0 auto;
+        padding-bottom: 5px;
+        font-family: 'Merriweather', serif;
+        font-size: 23px;
+        text-align: center;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #E91E63;
+        text-shadow: 1px 1px 2px #f1eeee;
+
+        @media (min-width: 768px) {
+            width: auto;
+            font-size: 26px;
+        }
+
+        @media (min-width: 1200px) {
+            font-size: 32px;
+            padding-bottom: 0;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 34px;
+        font-size: 22px;
+        text-align: center;
+        text-transform: uppercase;
+        color: #1a1414;
+        text-shadow: 5px 5px rgb(247 241 243 / 36%);
+        letter-spacing: 1px;
+        font-weight: 600;
+
+        @media (min-width: 768px) {
+            margin-bottom: 18px;
+        }
+
+        @media (min-width: 1200px) {
+            margin-bottom: 12px;
+        }
+    }
+
+    &__slot {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%,0);
+        width: 100%;
+        animation: spin 6s linear infinite;
+
+        @media (min-width: 768px) {
+            height: 500px;
+        }
+
+        @media (min-width: 1200px) {
+            height: 520px;
+        }
+    }
+
+    &__slot.active {
+        animation: spin-win 3s forwards linear;
+    }
+
+    &__arrow {
+        position: absolute;
+        top: 103px;
+        left: 43%;
+        height: 50px;
+        animation: 3s arrow-down linear infinite;
+
+        @media (min-width: 768px) {
+            top: 68px;
+            left: 45%;
+            height: 60px;
+        }
+
+        @media (min-width: 1200px) {
+            top: 65px;
+        }
+    }
+
+    &__hairdryer {
+        position: absolute;
+        width: 80px;
+
+        @media (min-width: 768px) {
+            width: 100px;
+        }
+
+        &--top {
+            top: 26px;
+            right: -96px;
+            animation: pulse 4s linear infinite;
+        }
+
+        &--right {
+            bottom: 221px;
+            right: -105px;
+            animation: pulse 3s linear infinite;
+        }
+
+        &--left {
+            top: 157px;
+            left: -138px;
+            animation: pulse 6s linear infinite;
+
+            @media (min-width: 768px) {
+                top: 118px;
+                left: -6px;
+            }
+        }
+
+        &--bottom {
+            bottom: 12px;
+            left: -106px;
+            animation: pulse 4s linear infinite;
+
+            @media (min-width: 768px) {
+                bottom: 99px;
+                left: -78px;
+            }
+        }
+    }
+
+    &__button {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,0);
+        bottom: 168px;
+        height: 58px;
+        width: 58px;
+        border-radius: 50%;
+        border: none;
+        font-family: "Merriweather", serif;
+        text-align: center;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        background: black;
+        cursor: pointer;
+        animation: pulse-btn 4s linear infinite;
+
+        @media (min-width: 768px) {
+            bottom: 226px;
+            width: 65px;
+            height: 65px;
+        }
+
+        @media (min-width: 1200px) {
+            bottom: 230px;
+            width: 80px;
+            height: 80px;
+        }
+
+        &:hover {
+            background: #df608b;
+            color: #FFFFFF;
+        }
+
+        &:active {
+            background-color: #E91E63;
+            color: #FFFFFF;
+        }
+    }
+
+    &__button.stop,
+    &__button disabled {
+        animation: none;
+
+        &:hover {
+            color: #FFFFFF;
+            background: black;
+        }
+
+        &:active {
+            color: #FFFFFF;
+            background: black;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        bottom: 20px;
+        right: 0;
+        width: 100px;
+
+        @media (min-width: 1200px) {
+            right: 30px;
+            width: 150px;
+        }
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.8, 0.8);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(0.8, 0.8);
+    }
+}
+
+@keyframes pulse-btn {
+    0% {
+        transform: translate(-50%,0) scale(0.8, 0.8);
+    }
+    50% {
+        transform: translate(-50%,0) scale(1.1, 1.1);
+    }
+    100% {
+        transform: translate(-50%,0) scale(0.8, 0.8);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+@keyframes spin-win {
+    0% {
+        transform: translateX(-50%) rotate(0deg);
+    }
+    100% {
+        transform: translateX(-50%) rotate(630deg);
+    }
+}
+
+@keyframes arrow-down {
+    0% {
+        transform: translate(-5px, -5px);
+    }
+    50% {
+        transform: translate(-5px, 5px);
+    }
+    100% {
+        transform: translate(-5px, -5px);
+    }
+}

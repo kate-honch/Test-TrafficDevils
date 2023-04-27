@@ -1,0 +1,22 @@
+.header {
+  position: relative;
+  height: 88px;
+  z-index: 1;
+  background-image: url(../../images/dyson-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  box-shadow: 0px 4px 4px #1a1618;
+}
+@media (min-width: 768px) {
+  .header {
+    height: 65px;
+    background-position: 0 -240px;
+  }
+}
+@media (min-width: 1200px) {
+  .header {
+    height: 60px;
+    background-position: 0 -395px;
+  }
+}/*# sourceMappingURL=header.css.map */
